@@ -5,15 +5,28 @@ var tasks = ["", "", "", "", "", "", "", "", ""];
 // Start of Declaring Functions
 // Load Schedule
 var loadSchedule = function () {
+    // Load Current Day
     var dateLine = $("#currentDay");
     var currentDate = moment().format("dddd MMMM Do");
     $(dateLine).text(currentDate);
+
+    // Load All Task for Each Time Block from Local Storage
+    loadLocalStorage();
 }
 
 // Load Local Storage
 var loadLocalStorage = function () {
     tasks = JSON.parse(localStorage.getItem("tasks"));
-    console.log(tasks);
+
+    var taskInfoID = "";
+    // Update each Task Box
+    for (var i = 9; i < 18; i++) {
+        taskInfoID = "#hour-" + i;
+        $(taskInfoID).text(tasks[i-9]);
+    }
+
+    // Update Color Code
+    updateColorCode();
 }
 
 // Update Local Storage
@@ -23,12 +36,12 @@ var updateLocalStorage = function (ID) {
     var index = parseInt(ID) - 9;
     tasks[index] = taskInfo;
     
-    console.log("Just in case");
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 // Update Color Indicator
 var updateColorCode = function () {
+    // Get Current Time, in Hour
     var currentTime = moment().hour();
     var targetID = "";
 
@@ -71,4 +84,3 @@ $("button").click(function() {
 
 // Launch
 loadSchedule();
-updateColorCode();

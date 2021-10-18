@@ -47,6 +47,6 @@ You are required to submit the following for review:
 
 ## Result
 
-URL of the deployed application : https://pc611652003.github.io/Code-Quiz/
+URL of the deployed application : https://pc611652003.github.io/Work-Day-Scheduler/
 
-URL of the GitHub repository : https://github.com/pc611652003/Code-Quiz
+URL of the GitHub repository : https://github.com/pc611652003/Work-Day-Scheduler

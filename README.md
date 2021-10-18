@@ -50,3 +50,18 @@ You are required to submit the following for review:
 URL of the deployed application : https://pc611652003.github.io/Work-Day-Scheduler/
 
 URL of the GitHub repository : https://github.com/pc611652003/Work-Day-Scheduler
+
+The Application will start at this page with local storage loaded.
+![Main Page](screenshots/Main_Page.PNG "Starting page of the application")
+
+The Application will load Today's Date and Color coding according to Current Time.
+![Load Page](screenshots/Date_Time_Loaded.PNG "Date and Time loaded in the page")
+
+User can click on the Text Box to Start Edit the Info
+![Edit Page](screenshots/Text_Edit.PNG "Task Info Editing")
+
+After editing, the new info is not stored in the local storage.
+![Before Save](screenshots/Before_Saving.PNG "Before Saving")
+
+After click on the save button, the info is now saved in the local storage.
+![After Save](screenshots/After_Saving.PNG "After Saving")

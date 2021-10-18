@@ -10,13 +10,23 @@ var loadSchedule = function () {
     var currentDate = moment().format("dddd MMMM Do");
     $(dateLine).text(currentDate);
 
+    var timeSlotID = "";
+    for (var i = 9; i < 18; i++) {
+        timeSlotID = "#timeslot-" + i;
+        $(timeSlotID).text(moment().hour(i).format("hA"));
+    }
+
     // Load All Task for Each Time Block from Local Storage
     loadLocalStorage();
 }
 
 // Load Local Storage
 var loadLocalStorage = function () {
-    tasks = JSON.parse(localStorage.getItem("tasks"));
+    var loadedtasks = JSON.parse(localStorage.getItem("tasks"));
+
+    if (loadedtasks) {
+        tasks = loadedtasks;
+    }
 
     var taskInfoID = "";
     // Update each Task Box
